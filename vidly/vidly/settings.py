@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f1k3&&=*@30e6*3^&!ut7$+$0^t@iu-3z!ry6@4(pqg88pi+c$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vervel.app']
+ALLOWED_HOSTS = ['.vervel.app','127.0.0.1']
 
 
 # Application definition
