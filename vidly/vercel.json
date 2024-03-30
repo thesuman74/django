@@ -9,5 +9,11 @@
             "src": "/(.*)",
             "dest": "vidly/wsgi.py"
         }
+    ],
+    {
+   "rewrites":  [
+       {"source": "/(.*)", "destination": "/"}
     ]
+    }
+    
 }
