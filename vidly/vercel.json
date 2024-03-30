@@ -1,19 +1,30 @@
 {
-    "builds": [{
-      "src": "vidly/vidly/wsgi.py",
+  "version": 2,
+  "builds": [
+    {
+      "src": "vidly/wsgi.py",
       "use": "@vercel/python",
       "config": {
         "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
+        "runtime": "Python3.9"
       }
-    }],
-    "routes": [{
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "vidly/vidly/wsgi.py"
-    }],
-    "rewrites": [{
-      "source": "/(.*)",
-      "destination": "/"
-    }]
-  }
-  
+      "dest": "a2svhackathon/wsgi.py"
+    }
+  ]
+}
